@@ -28,3 +28,11 @@ Useful for workflows that uses a headless browser to render pages that may conta
       - name: Install Noto fonts and adding emoji support
         run: sudo apt-get install fonts-noto fonts-noto-color-emoji -y
 ```
+
+## Post to Slack channel
+
+```yaml
+      - name: Post to Slack
+        run: |
+          test -f /tmp/slack.json && curl -X POST -H 'Content-type: application/json' -d @/tmp/slack.json "${{ secrets.SLACK_WEBHOOK_URL }}"
+```
