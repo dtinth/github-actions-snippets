@@ -14,12 +14,13 @@ By the way, **the contents you will see below is automatically generated from Gi
 
 - Of course, [this is implemented using GitHub Actions](https://github.com/dtinth/github-actions-snippets/blob/master/.github/workflows/update.yml)!
 
-<!-- begin autogen 0b31160502a7d992162afd436db36e96dd00a349bffd9723566d4d9d8c1e44f4 -->
+<!-- begin autogen 4827e711b01fdfe93cd2364a60788f01a3049c8f72896d1840bfe22b7d3802d0 -->
 
 ## Table of contents
 - [Making emojis render properly in headless browsers](#I2)
 - [Commit and push local changes back to GitHub](#I1)
 - [Post to a Slack channel](#I3)
+- [Run inline Node.js script](#I4)
 
 ## <a name="I2"></a>Making emojis render properly in headless browsers
 Useful for workflows that uses a headless browser to render pages that may contain emojis.
@@ -69,4 +70,18 @@ Useful for building alerts on (e.g.) build or test failures, as well as other mi
   <sup>submitted by <a href="https://github.com/dtinth">@dtinth</a> (<a href="https://github.com/dtinth/github-actions-snippets/issues/3">#3</a>)</sup>
 </p>
 
-<!-- end autogen 0b31160502a7d992162afd436db36e96dd00a349bffd9723566d4d9d8c1e44f4 -->
+## <a name="I4"></a>Run inline Node.js script
+Sometimes you need to run a Node.js script and it’s so simple you might as well inline it into your workflow file…
+
+```yaml
+      - run: |
+          node << 'EOF'
+            console.log('Hello!')
+          EOF
+```
+
+<p align="right">
+  <sup>submitted by <a href="https://github.com/dtinth">@dtinth</a> (<a href="https://github.com/dtinth/github-actions-snippets/issues/4">#4</a>)</sup>
+</p>
+
+<!-- end autogen 4827e711b01fdfe93cd2364a60788f01a3049c8f72896d1840bfe22b7d3802d0 -->
