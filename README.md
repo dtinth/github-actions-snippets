@@ -14,9 +14,12 @@ By the way, **the contents you will see below is automatically generated from Gi
 
 - Of course, [this is implemented using GitHub Actions](https://github.com/dtinth/github-actions-snippets/blob/master/.github/workflows/update.yml)!
 
-<!-- begin autogen 8dc719811d296f16273d06860da5699779420175e468fb70187ec9d275ae6d49 -->
+<!-- begin autogen 9ab6e461ef39f6b0e44341601b10a8860dfbcd664a9ef4a39cf58bad06b60de8 -->
 
-## Commit and push local changes back to GitHub
+## Table of contents
+- [Commit and push local changes back to GitHub](#I1),- [Making emojis render properly in headless browsers](#I2),- [Post to a Slack channel](#I3)
+
+## <a name="I1"></a>Commit and push local changes back to GitHub
 Useful for e.g. [repository that updates itself](https://github.com/dtinth/fresh-react-app), [keeping app screenshots up-to-date](https://github.com/dtinth/timelapse).
 
 ```yaml
@@ -36,7 +39,7 @@ Useful for e.g. [repository that updates itself](https://github.com/dtinth/fresh
   <sup>submitted by <a href="https://github.com/dtinth">@dtinth</a> (<a href="https://github.com/dtinth/github-actions-snippets/issues/1">#1</a>)</sup>
 </p>
 
-## Making emojis render properly in headless browsers
+## <a name="I2"></a>Making emojis render properly in headless browsers
 Useful for workflows that uses a headless browser to render pages that may contain emojis.
 
 ```yaml
@@ -48,7 +51,7 @@ Useful for workflows that uses a headless browser to render pages that may conta
   <sup>submitted by <a href="https://github.com/dtinth">@dtinth</a> (<a href="https://github.com/dtinth/github-actions-snippets/issues/2">#2</a>)</sup>
 </p>
 
-## Post to a Slack channel
+## <a name="I3"></a>Post to a Slack channel
 Useful for building alerts on (e.g.) build or test failures, as well as other miscellaneous use cases.
 
 ```yaml
@@ -64,4 +67,4 @@ Useful for building alerts on (e.g.) build or test failures, as well as other mi
   <sup>submitted by <a href="https://github.com/dtinth">@dtinth</a> (<a href="https://github.com/dtinth/github-actions-snippets/issues/3">#3</a>)</sup>
 </p>
 
-<!-- end autogen 8dc719811d296f16273d06860da5699779420175e468fb70187ec9d275ae6d49 -->
+<!-- end autogen 9ab6e461ef39f6b0e44341601b10a8860dfbcd664a9ef4a39cf58bad06b60de8 -->
