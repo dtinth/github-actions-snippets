@@ -1,11 +1,14 @@
-# github-actions-snippets
-Some snippets of GitHub actions YAML that you can copy and paste, old school style.
+# Some snippets for GitHub Actions
+Some snippets of GitHub actions YAML code that you can copy-and-paste, old school style.
 
-**Why this? Isn’t the selling point of GitHub Actions the fact that you can share and reuse others’ actions??** Yes, but sometimes there are cases where I prefer to just copy and paste YAML code instead of reusing others’ actions:
+**Why this? Isn’t the selling point of GitHub Actions the fact that you can share and reuse others’ actions??**
+Yes, but sometimes there are cases where I prefer to just copy-and-paste YAML code instead of reusing others’ actions:
 
 - Sometimes I want to customize the action’s code without going through the repository forking dance.
 
 - There are [security concerns](https://dev.to/mheap/improve-your-github-actions-security-1im7) regards using others’ actions. Sure, we can trust official actions and actions created by big companies, but random strangers on the internet? Hmmm. Even if we strictly use commit hash instead of tag, our actions YAML will be full of Git hashes instead of meaningful versions, and so we lose out on automatic updates. I’m also not sure what’s going to happen if the actions’ repository is deleted or if the owner’s account is suspended or deleted.
+
+<p align="center"> · &nbsp; · &nbsp; · </p>
 
 By the way, **the contents you will see below is automatically generated from GitHub Issues**.
 
@@ -13,6 +16,8 @@ By the way, **the contents you will see below is automatically generated from Gi
   So if you find any snippet helpful, please give a reaction on the corresponding issue!
 
 - Of course, [this is implemented using GitHub Actions](https://github.com/dtinth/github-actions-snippets/blob/master/.github/workflows/update.yml)!
+
+<p align="center"> · &nbsp; · &nbsp; · </p>
 
 <!-- begin autogen 4827e711b01fdfe93cd2364a60788f01a3049c8f72896d1840bfe22b7d3802d0 -->
 
