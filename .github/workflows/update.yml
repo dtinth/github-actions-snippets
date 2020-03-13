@@ -80,8 +80,12 @@ jobs:
             }
           EOF
       - name: Push changes back to GitHub
+        env:
+          GIT_COMMITTER_NAME: Janitor
+          GIT_AUTHOR_NAME: Janitor
+          EMAIL: repository-janitor[bot]@users.noreply.github.com
         run: |
           git add --all \
-            && git commit -m "Update $(node -p 'new Date().toJSON()')" \
+            && git commit -m "Update contents from GitHub Issues @ $(node -p 'new Date().toJSON()')" \
             || echo "Nothing to commit"
           git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git" "$GITHUB_REF"
