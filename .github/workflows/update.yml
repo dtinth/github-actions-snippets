@@ -71,6 +71,7 @@ jobs:
               .map(row => {
                 return `- [${row.title}](#I${row.number})`
               })
+              .join('\n')
             const contentsBody = rows
               .map(row => {
                 return [
@@ -94,9 +95,9 @@ jobs:
           EOF
       - name: Push changes back to GitHub
         env:
-          GIT_COMMITTER_NAME: Janitor
-          GIT_AUTHOR_NAME: Janitor
-          EMAIL: repository-janitor[bot]@users.noreply.github.com
+          GIT_COMMITTER_NAME: dtinth-bot
+          GIT_AUTHOR_NAME: dtinth-bot
+          EMAIL: dtinth-bot@users.noreply.github.com
         run: |
           git add --all \
             && git commit -m "Update contents from GitHub Issues @ $(node -p 'new Date().toJSON()')" \
