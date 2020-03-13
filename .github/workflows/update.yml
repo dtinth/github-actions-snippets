@@ -50,7 +50,7 @@ jobs:
             const issues = JSON.parse(String(execSync(`curl -H "Authorization: Bearer ${process.env.GITHUB_TOKEN}" -X POST -d @- https://api.github.com/graphql`, { input })))
               .data.repository.issues.nodes
               .sort((a, b) => score(b) - score(a))
-            const contents = issues
+            const rows = issues
               .map(issue => {
                 const m = issue.body.replace(/\r\n|\r/g, '\n').match(/^\s*(\w[^]*?\n```yaml\n[^]*?\n```)/)
                 if (!m) {
@@ -67,9 +67,14 @@ jobs:
                 }
               })
               .filter(row => row)
+            const tableOfContents = rows
+              .map(row => {
+                return `- [${row.title}](#I${row.number})`
+              })
+            const contentsBody = rows
               .map(row => {
                 return [
-                  `## ${row.title}`,
+                  `## <a name="I${row.number}"></a>${row.title}`,
                   `${row.body}`,
                   ``,
                   `<p align="right">`,
@@ -77,6 +82,7 @@ jobs:
                   `</p>`,
                 ].join('\n')
               }).join('\n\n')
+            const contents = `## Table of contents\n${tableOfContents}\n\n${contentsBody}`
             const readme = fs.readFileSync('README.md', 'utf8')
             const outputReadme = readme.replace(/<!-- begin autogen (\w+) -->([^]*?)<!-- end autogen \1 -->/, () => {
               const hash = require('crypto').createHash('sha256').update(contents).digest('hex')
