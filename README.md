@@ -19,25 +19,13 @@ By the way, **the contents you will see below is automatically generated from Gi
 
 <p align="center"> · &nbsp; · &nbsp; · </p>
 
-<!-- begin autogen 4827e711b01fdfe93cd2364a60788f01a3049c8f72896d1840bfe22b7d3802d0 -->
+<!-- begin autogen d47421f90a93419e65ed6c3318249ac1e31f22077ef12daaa22a9e0ced4e54a5 -->
 
 ## Table of contents
-- [Making emojis render properly in headless browsers](#I2)
 - [Commit and push local changes back to GitHub](#I1)
+- [Making emojis render properly in headless browsers](#I2)
 - [Post to a Slack channel](#I3)
 - [Run inline Node.js script](#I4)
-
-## <a name="I2"></a>Making emojis render properly in headless browsers
-Useful for workflows that uses a headless browser to render pages that may contain emojis.
-
-```yaml
-      - name: Install Noto fonts and add emoji support
-        run: sudo apt-get install fonts-noto fonts-noto-color-emoji -y
-```
-
-<p align="right">
-  <sup>submitted by <a href="https://github.com/dtinth">@dtinth</a> (<a href="https://github.com/dtinth/github-actions-snippets/issues/2">#2</a>)</sup>
-</p>
 
 ## <a name="I1"></a>Commit and push local changes back to GitHub
 Useful for e.g. [repository that updates itself](https://github.com/dtinth/fresh-react-app), [keeping app screenshots up-to-date](https://github.com/dtinth/timelapse).
@@ -57,6 +45,18 @@ Useful for e.g. [repository that updates itself](https://github.com/dtinth/fresh
 
 <p align="right">
   <sup>submitted by <a href="https://github.com/dtinth">@dtinth</a> (<a href="https://github.com/dtinth/github-actions-snippets/issues/1">#1</a>)</sup>
+</p>
+
+## <a name="I2"></a>Making emojis render properly in headless browsers
+Useful for workflows that uses a headless browser to render pages that may contain emojis.
+
+```yaml
+      - name: Install Noto fonts and add emoji support
+        run: sudo apt-get install fonts-noto fonts-noto-color-emoji -y
+```
+
+<p align="right">
+  <sup>submitted by <a href="https://github.com/dtinth">@dtinth</a> (<a href="https://github.com/dtinth/github-actions-snippets/issues/2">#2</a>)</sup>
 </p>
 
 ## <a name="I3"></a>Post to a Slack channel
@@ -89,4 +89,4 @@ Sometimes you need to run a Node.js script and it’s so simple you might as wel
   <sup>submitted by <a href="https://github.com/dtinth">@dtinth</a> (<a href="https://github.com/dtinth/github-actions-snippets/issues/4">#4</a>)</sup>
 </p>
 
-<!-- end autogen 4827e711b01fdfe93cd2364a60788f01a3049c8f72896d1840bfe22b7d3802d0 -->
+<!-- end autogen d47421f90a93419e65ed6c3318249ac1e31f22077ef12daaa22a9e0ced4e54a5 -->
