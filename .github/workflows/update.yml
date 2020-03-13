@@ -38,6 +38,15 @@ jobs:
               }
             }`
             const input = JSON.stringify({ query })
+            const countReactions = (issue, name) => {
+              const found = issue.reactionGroups.find(g => g.content === name)
+              return found && found.users.totalCount || 0
+            }
+            const score = issue => {
+              return countReactions(issue, 'THUMBS_UP') - countReactions(issue, 'THUMBS_DOWN')
+            }
             const issues = JSON.parse(String(execSync(`curl -H "Authorization: Bearer ${process.env.GITHUB_TOKEN}" -X POST -d @- https://api.github.com/graphql`, { input })))
+              .data.repository.issues.nodes
+              .sort((a, b) => score(b) - score(a))
             console.log(issues)
           EOF
