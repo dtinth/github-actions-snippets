@@ -60,6 +60,7 @@ jobs:
                 return {
                   title: issue.title,
                   body: m[1],
+                  url: issue.url,
                   number: issue.number,
                   author: issue.author.login,
                   score: score(issue),
@@ -70,6 +71,10 @@ jobs:
                 return [
                   `## ${row.title}`,
                   `${row.body}`,
+                  ``,
+                  `<p align="right">`,
+                  `  <sup>submitted by <a href="https://github.com/${row.author}">@${row.author}</a> (<a href="${row.url}">#${row.number}</a>)</sup>`
+                  `</p>`
                 ].join('\n')
               }).join('\n\n')
             const readme = fs.readFileSync('README.md', 'utf8')
