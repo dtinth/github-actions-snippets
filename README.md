@@ -19,7 +19,7 @@ By the way, **the contents you will see below is automatically generated from Gi
 
 <p align="center"> · &nbsp; · &nbsp; · </p>
 
-<!-- begin autogen d47421f90a93419e65ed6c3318249ac1e31f22077ef12daaa22a9e0ced4e54a5 -->
+<!-- begin autogen 51b048b6bc5ea5cfa154dd9114b8f4ac3f93e34dcd3ba6b3eb846f7cd909ded7 -->
 
 ## Table of contents
 - [Commit and push local changes back to GitHub](#I1)
@@ -28,7 +28,11 @@ By the way, **the contents you will see below is automatically generated from Gi
 - [Run inline Node.js script](#I4)
 
 ## <a name="I1"></a>Commit and push local changes back to GitHub
-Useful for e.g. [repository that updates itself](https://github.com/dtinth/fresh-react-app), [keeping app screenshots up-to-date](https://github.com/dtinth/timelapse).
+GitHub Actions can push commits back into the respository. Use cases include:
+
+- [Automatically generating README file from GitHub Issues](https://github.com/dtinth/github-actions-snippets)
+- [Creating a self-updating repository](https://github.com/dtinth/fresh-react-app)
+- [Keeping app screenshots up-to-date](https://github.com/dtinth/timelapse)
 
 ```yaml
       - name: Push changes back to GitHub
@@ -89,4 +93,4 @@ Sometimes you need to run a Node.js script and it’s so simple you might as wel
   <sup>submitted by <a href="https://github.com/dtinth">@dtinth</a> (<a href="https://github.com/dtinth/github-actions-snippets/issues/4">#4</a>)</sup>
 </p>
 
-<!-- end autogen d47421f90a93419e65ed6c3318249ac1e31f22077ef12daaa22a9e0ced4e54a5 -->
+<!-- end autogen 51b048b6bc5ea5cfa154dd9114b8f4ac3f93e34dcd3ba6b3eb846f7cd909ded7 -->
