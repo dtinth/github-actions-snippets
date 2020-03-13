@@ -14,10 +14,12 @@ By the way, **the contents you will see below is automatically generated from Gi
 
 - Of course, [this is implemented using GitHub Actions](https://github.com/dtinth/github-actions-snippets/blob/master/.github/workflows/update.yml)!
 
-<!-- begin autogen 9ab6e461ef39f6b0e44341601b10a8860dfbcd664a9ef4a39cf58bad06b60de8 -->
+<!-- begin autogen 1dc2a06e51e67e2491382885188116373e111a756b96edf3292db67308fb957e -->
 
 ## Table of contents
-- [Commit and push local changes back to GitHub](#I1),- [Making emojis render properly in headless browsers](#I2),- [Post to a Slack channel](#I3)
+- [Commit and push local changes back to GitHub](#I1)
+- [Making emojis render properly in headless browsers](#I2)
+- [Post to a Slack channel](#I3)
 
 ## <a name="I1"></a>Commit and push local changes back to GitHub
 Useful for e.g. [repository that updates itself](https://github.com/dtinth/fresh-react-app), [keeping app screenshots up-to-date](https://github.com/dtinth/timelapse).
@@ -67,4 +69,4 @@ Useful for building alerts on (e.g.) build or test failures, as well as other mi
   <sup>submitted by <a href="https://github.com/dtinth">@dtinth</a> (<a href="https://github.com/dtinth/github-actions-snippets/issues/3">#3</a>)</sup>
 </p>
 
-<!-- end autogen 9ab6e461ef39f6b0e44341601b10a8860dfbcd664a9ef4a39cf58bad06b60de8 -->
+<!-- end autogen 1dc2a06e51e67e2491382885188116373e111a756b96edf3292db67308fb957e -->
