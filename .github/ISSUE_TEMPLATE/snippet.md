@@ -1,10 +1,6 @@
 ---
 name: Snippet
 about: Suggest a snippet
-title: Do something useful
-labels: ''
-assignees: ''
-
 ---
 
 Briefly describe why this snippet may be useful
