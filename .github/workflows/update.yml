@@ -48,5 +48,24 @@ jobs:
             const issues = JSON.parse(String(execSync(`curl -H "Authorization: Bearer ${process.env.GITHUB_TOKEN}" -X POST -d @- https://api.github.com/graphql`, { input })))
               .data.repository.issues.nodes
               .sort((a, b) => score(b) - score(a))
-            console.log(issues)
+            const contents = issues
+              .map(issue => {
+                const m = issue.body.match(/^\s*(\w[^]*?\n```yaml\n[^]*?\n```)/)
+                if (!m) return
+                return {
+                  title: issue.title,
+                  body: m[1],
+                  number: issue.number,
+                  author: issue.author.login,
+                  score: score(issue),
+                }
+              })
+              .filter(row => row)
+              .map(row => {
+                return [
+                  `# ${row.title}`,
+                  `${row.body}`,
+                ].join('\n')
+              }).join('\n\n')
+            console.log(contents)
           EOF
