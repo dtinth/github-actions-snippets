@@ -16,5 +16,28 @@ jobs:
           node << 'EOF'
             const fs = require('fs')
             const { execSync } = require('child_process')
-            console.log('Hello world!')
+            const query = `query QueryIssues { 
+              repository(owner: "dtinth", name: "github-actions-snippets") {
+                issues(first: 100, labels: ["snippet"]) {
+                  nodes {
+                    title
+                    author {
+                      login
+                    }
+                    body
+                    number
+                    url
+                    reactionGroups {
+                      content
+                      users {
+                        totalCount
+                      }
+                    }
+                  }
+                }
+              }
+            }`
+            const input = JSON.stringify({ query })
+            const issues = JSON.parse(String(execSync(`curl -H "Authorization: Bearer ${process.env.GITHUB_TOKEN}" -X POST -d @-`, { input })))
+            console.log(issues)
           EOF
