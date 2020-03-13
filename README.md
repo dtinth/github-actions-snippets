@@ -1,11 +1,18 @@
 # github-actions-snippets
-Some snippets of GitHub actions YAML that you can copy and paste!!!!!!
+Some snippets of GitHub actions YAML that you can copy and paste, old school style.
 
 **Why this? Isn’t the selling point of GitHub Actions the fact that you can share and reuse others’ actions??** Yes, but sometimes there are cases where I prefer to just copy and paste YAML code instead of reusing others’ actions:
 
 - Sometimes I want to customize the action’s code without going through the repository forking dance.
 
-- There are [security concerns](https://dev.to/mheap/improve-your-github-actions-security-1im7) regards using others’ actions. Sure we can trust official actions and actions created by big companies, but random strangers on the internet? Hmmm. Even if we strictly use commit hash instead of tag, our actions YAML will be full of Git hashes instead of meaningful versions, and so we lose out on automatic updates. I’m also not sure what’s going to happen if the actions’ repository is deleted or if the owner’s account is suspended or deleted.
+- There are [security concerns](https://dev.to/mheap/improve-your-github-actions-security-1im7) regards using others’ actions. Sure, we can trust official actions and actions created by big companies, but random strangers on the internet? Hmmm. Even if we strictly use commit hash instead of tag, our actions YAML will be full of Git hashes instead of meaningful versions, and so we lose out on automatic updates. I’m also not sure what’s going to happen if the actions’ repository is deleted or if the owner’s account is suspended or deleted.
+
+By the way, **the contents you will see below is automatically generated from GitHub Issues**.
+
+- They are **sorted by score**, where 👍 😄 🎉 ❤️ reactions count as upvote and 👎 😕 reactions count as downvote.
+  So if you find any snippet helpful, please give a reaction on the corresponding issue!
+
+- Of course, [this is implemented using GitHub Actions](https://github.com/dtinth/github-actions-snippets/blob/master/.github/workflows/update.yml)!
 
 <!-- begin autogen 8dc719811d296f16273d06860da5699779420175e468fb70187ec9d275ae6d49 -->
 
