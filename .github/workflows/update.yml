@@ -50,8 +50,11 @@ jobs:
               .sort((a, b) => score(b) - score(a))
             const contents = issues
               .map(issue => {
-                const m = issue.body.match(/^\s*(\w[^]*?\n```yaml\n[^]*?\n```)/)
-                if (!m) return
+                const m = issue.body.replace(/\r\n|\r/g, '\n').match(/^\s*(\w[^]*?\n```yaml\n[^]*?\n```)/)
+                if (!m) {
+                  console.log(`::warning::Issue ${issue.number} body text not recognized, skipping`)
+                  return
+                }
                 return {
                   title: issue.title,
                   body: m[1],
@@ -67,5 +70,18 @@ jobs:
                   `${row.body}`,
                 ].join('\n')
               }).join('\n\n')
-            console.log(contents)
+            const readme = fs.readFileSync('README.md', 'utf8')
+            const outputReadme = readme.replace(/<!-- begin autogen (\w+) -->([^]*?)<!-- end autogen \1 -->/, () => {
+              const hash = require('crypto').createHash('sha256').update(contents).digest('hex')
+              return `<!-- begin autogen ${hash} -->\n\n${contents}\n\n<!-- end autogen ${hash} -->`
+            })
+            if (readme !== outputReadme) {
+              fs.writeFileSync('README.md', outputReadme)
+            }
           EOF
+      - name: Push changes back to GitHub
+        run: |
+          git add --all \
+            && git commit -m "Update $(node -p 'new Date().toJSON()')" \
+            || echo "Nothing to commit"
+          git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git" "$GITHUB_REF"
