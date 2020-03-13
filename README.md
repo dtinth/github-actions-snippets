@@ -7,7 +7,7 @@ Some snippets of GitHub actions YAML that you can copy and paste!!!!!!
 
 - There are [security concerns](https://dev.to/mheap/improve-your-github-actions-security-1im7) regards using others’ actions. Sure we can trust official actions and actions created by big companies, but random strangers on the internet? Hmmm. Even if we strictly use commit hash instead of tag, our actions YAML will be full of Git hashes instead of meaningful versions, and so we lose out on automatic updates. I’m also not sure what’s going to happen if the actions’ repository is deleted or if the owner’s account is suspended or deleted.
 
-<!-- begin autogen 7d7430529a5fecc75c535a6f4e743659fe6c5b38288215c93e6b5f5fe4e6db38 -->
+<!-- begin autogen 8dc719811d296f16273d06860da5699779420175e468fb70187ec9d275ae6d49 -->
 
 ## Commit and push local changes back to GitHub
 Useful for e.g. [repository that updates itself](https://github.com/dtinth/fresh-react-app), [keeping app screenshots up-to-date](https://github.com/dtinth/timelapse).
@@ -25,6 +25,10 @@ Useful for e.g. [repository that updates itself](https://github.com/dtinth/fresh
           git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git" "$GITHUB_REF"
 ```
 
+<p align="right">
+  <sup>submitted by <a href="https://github.com/dtinth">@dtinth</a> (<a href="https://github.com/dtinth/github-actions-snippets/issues/1">#1</a>)</sup>
+</p>
+
 ## Making emojis render properly in headless browsers
 Useful for workflows that uses a headless browser to render pages that may contain emojis.
 
@@ -32,6 +36,10 @@ Useful for workflows that uses a headless browser to render pages that may conta
       - name: Install Noto fonts and add emoji support
         run: sudo apt-get install fonts-noto fonts-noto-color-emoji -y
 ```
+
+<p align="right">
+  <sup>submitted by <a href="https://github.com/dtinth">@dtinth</a> (<a href="https://github.com/dtinth/github-actions-snippets/issues/2">#2</a>)</sup>
+</p>
 
 ## Post to a Slack channel
 Useful for building alerts on (e.g.) build or test failures, as well as other miscellaneous use cases.
@@ -45,4 +53,8 @@ Useful for building alerts on (e.g.) build or test failures, as well as other mi
           test -f /tmp/slack.json && curl -X POST -H 'Content-type: application/json' -d @/tmp/slack.json "${{ secrets.SLACK_WEBHOOK_URL }}"
 ```
 
-<!-- end autogen 7d7430529a5fecc75c535a6f4e743659fe6c5b38288215c93e6b5f5fe4e6db38 -->
+<p align="right">
+  <sup>submitted by <a href="https://github.com/dtinth">@dtinth</a> (<a href="https://github.com/dtinth/github-actions-snippets/issues/3">#3</a>)</sup>
+</p>
+
+<!-- end autogen 8dc719811d296f16273d06860da5699779420175e468fb70187ec9d275ae6d49 -->
