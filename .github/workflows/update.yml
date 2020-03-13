@@ -73,8 +73,8 @@ jobs:
                   `${row.body}`,
                   ``,
                   `<p align="right">`,
-                  `  <sup>submitted by <a href="https://github.com/${row.author}">@${row.author}</a> (<a href="${row.url}">#${row.number}</a>)</sup>`
-                  `</p>`
+                  `  <sup>submitted by <a href="https://github.com/${row.author}">@${row.author}</a> (<a href="${row.url}">#${row.number}</a>)</sup>`,
+                  `</p>`,
                 ].join('\n')
               }).join('\n\n')
             const readme = fs.readFileSync('README.md', 'utf8')
