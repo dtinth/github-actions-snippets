@@ -19,12 +19,13 @@ By the way, **the contents you will see below is automatically generated from Gi
 
 <p align="center"> · &nbsp; · &nbsp; · </p>
 
-<!-- begin autogen 51b048b6bc5ea5cfa154dd9114b8f4ac3f93e34dcd3ba6b3eb846f7cd909ded7 -->
+<!-- begin autogen 81a8f0011e0daeb868d0ccd4af4ec1ebd59fe6bc54385f2d07530c07a7fd0b5d -->
 
 ## Table of contents
 - [Commit and push local changes back to GitHub](#I1)
 - [Making emojis render properly in headless browsers](#I2)
 - [Post to a Slack channel](#I3)
+- [Run a job only when commit message matches a certain keyword](#I5)
 - [Run inline Node.js script](#I4)
 
 ## <a name="I1"></a>Commit and push local changes back to GitHub
@@ -79,6 +80,19 @@ Useful for building alerts on (e.g.) build or test failures, as well as other mi
   <sup>submitted by <a href="https://github.com/dtinth">@dtinth</a> (<a href="https://github.com/dtinth/github-actions-snippets/issues/3">#3</a>)</sup>
 </p>
 
+## <a name="I5"></a>Run a job only when commit message matches a certain keyword
+Useful when you want to save costs… especially macOS builds, which can be expensive. Sometimes building on every single commit may not be the best idea…
+
+```yaml
+jobs:
+  build:
+    if: "contains(github.event.head_commit.message, '[build]')"
+```
+
+<p align="right">
+  <sup>submitted by <a href="https://github.com/dtinth">@dtinth</a> (<a href="https://github.com/dtinth/github-actions-snippets/issues/5">#5</a>)</sup>
+</p>
+
 ## <a name="I4"></a>Run inline Node.js script
 Sometimes you need to run a Node.js script and it’s so simple you might as well inline it into your workflow file…
 
@@ -93,4 +107,4 @@ Sometimes you need to run a Node.js script and it’s so simple you might as wel
   <sup>submitted by <a href="https://github.com/dtinth">@dtinth</a> (<a href="https://github.com/dtinth/github-actions-snippets/issues/4">#4</a>)</sup>
 </p>
 
-<!-- end autogen 51b048b6bc5ea5cfa154dd9114b8f4ac3f93e34dcd3ba6b3eb846f7cd909ded7 -->
+<!-- end autogen 81a8f0011e0daeb868d0ccd4af4ec1ebd59fe6bc54385f2d07530c07a7fd0b5d -->
